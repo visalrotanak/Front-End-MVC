@@ -1,0 +1,273 @@
+body {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+            align-items: center;
+    height: 100%;
+    background: #fcf3ec;
+  }
+  
+  .button {
+    --offset: 10px;
+    --border-size: 2px;
+    display: block;
+    position: relative;
+    padding: 1.5em 3em;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: 0;
+    background: transparent;
+    color: #e55743;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+    -webkit-transition: background .8s ease;
+    transition: background .8s ease;
+    top: 12.5em;
+    margin: 2em;
+    width: 280px;
+  }
+  .button:hover {
+    background: rgba(100, 0, 0, 0.03);
+  }
+  .button__horizontal, .button__vertical {
+    position: absolute;
+    top: var(--horizontal-offset, 0);
+    right: var(--vertical-offset, 0);
+    bottom: var(--horizontal-offset, 0);
+    left: var(--vertical-offset, 0);
+    -webkit-transition: -webkit-transform .8s ease;
+    transition: -webkit-transform .8s ease;
+    transition: transform .8s ease;
+    transition: transform .8s ease, -webkit-transform .8s ease;
+    will-change: transform;
+  }
+  .button__horizontal::before, .button__vertical::before {
+    content: '';
+    position: absolute;
+    border: inherit;
+  }
+  .button__horizontal {
+    --vertical-offset: calc(var(--offset) * -1);
+    border-top: var(--border-size) solid currentcolor;
+    border-bottom: var(--border-size) solid currentcolor;
+  }
+  .button__horizontal::before {
+    top: calc(var(--vertical-offset) - var(--border-size));
+    bottom: calc(var(--vertical-offset) - var(--border-size));
+    left: calc(var(--vertical-offset) * -1);
+    right: calc(var(--vertical-offset) * -1);
+  }
+  .button:hover .button__horizontal {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  .button__vertical {
+    --horizontal-offset: calc(var(--offset) * -1);
+    border-left: var(--border-size) solid currentcolor;
+    border-right: var(--border-size) solid currentcolor;
+  }
+  .button__vertical::before {
+    top: calc(var(--horizontal-offset) * -1);
+    bottom: calc(var(--horizontal-offset) * -1);
+    left: calc(var(--horizontal-offset) - var(--border-size));
+    right: calc(var(--horizontal-offset) - var(--border-size));
+  }
+  .button:hover .button__vertical {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+
+  /*Popup move horizontal*/
+@keyframes move-horizontal{
+  from {
+    opacity: 0;
+    /* left: 50.3em */
+    top: 50em;
+  }
+  to {
+    opacity: 1;
+    top: 33.2em;
+    /* left: 68.3em; */
+  }
+}
+/* @keyframes scale-form{
+  from{
+    height: 10%;
+    width: 10%;
+  }
+  to {
+    height: 90%;
+    width: 90%;
+  }
+} */
+
+
+  /* Button used to open the contact form - fixed at the bottom of the page */
+  /* .open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+  } */
+  
+  /* The popup form - hidden by default */
+  .insert-form-popup {
+    display: none;
+    position: fixed;
+    border: 2px solid #e55743;
+    z-index: 9;
+    top: 33.3em;
+    left: 49.8em;
+    animation: move-horizontal 0.5s ease-in;
+  }
+  .delete-form-popup {
+    display: none;
+    position: fixed;
+    border: 2px solid #e55743;
+    z-index: 9;
+    top: 33.3em;
+    left: 49.8em;
+    animation: move-horizontal 0.5s ease-in;
+  }  
+  .update-form-popup {
+    display: none;
+    position: fixed;
+    border: 2px solid #e55743;
+    z-index: 9;
+    left: 49.8em;
+    top: 33.3em;
+    animation: move-horizontal 0.5s ease-in;
+  }  
+  .view-form-popup {
+    display: none;
+    position: fixed;
+    border: 2px solid #e55743;
+    z-index: 9;
+    left: 49.8em;
+    top: 33.3em;
+    animation: move-horizontal 0.5s ease-in;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    color: #e55743;
+    max-width: 300px;
+    padding: 10px;
+    background: #fcf3ec;
+    font-family: 'Montserrat Alternates' ;
+    /* animation: scale-form 0.7s ease-in; */
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text], .form-container input[type=text] {
+    width: 90%;
+    height: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #fcf3ec;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+ /*Submit Button Animation*/
+ /* @keyframes{
+   100%, 0%{
+
+   }
+   20% {
+
+   }
+   40% {
+
+   }
+   60% {
+
+   }
+ }  */
+
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #21bf73;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.5;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    color: #e55743;
+    right: 0px;
+  }
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+
+  .btn_cancel{
+    margin-top: 10px;
+    width: fit-content;
+    margin-left: 17.7em;
+    border: none;
+    background-color: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;  
+    color: #e55743;
+  }
+
+/* .mfp-move-horizontal .mfp-with-anim {
+  opacity: 0;
+  transition: all 0.3s;
+  transform: translateX(-50px);
+}
+.mfp-move-horizontal.mfp-bg {
+  opacity: 0;
+  transition: all 0.3s;
+}
+.mfp-move-horizontal.mfp-ready .mfp-with-anim {
+  opacity: 1;
+  transform: translateX(0);
+}
+.mfp-move-horizontal.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+.mfp-move-horizontal.mfp-removing .mfp-with-anim {
+  transform: translateX(50px);
+  opacity: 0;
+}
+.mfp-move-horizontal.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+
+.object {
+  position: absolute;
+  transition: all 2s ease-in-out;
+  -webkit-transition: all 2s ease-in-out;
+}
+#axis:hover .move-right{
+  transform: translate(350px,0);
+  -webkit-transform: translate(350px,0); 
+} */

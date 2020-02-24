@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+<div class="menu-wrapper">  
+    <div class="insert-form-wrapper">
+        <button class="button" onclick="openInsertForm()">
+            Insert
+            <div class="button__horizontal"></div>
+            <div class="button__vertical"></div>
+        </button>
+        <div class="insert-form-popup" id="myInsertForm">
+            <form action="/action_page.php" class="form-container">
+            <button type="submit" class="btn_cancel" onclick="closeInsertForm()" >&#10006;</button> 
+            <h1 style="margin-top: -28px;" >Insert</h1>
+            <hr style="color:#e55743;">
+            <label for="id"><b>ID</b></label><br>
+            <input type="text" placeholder="Enter ID" name="id" required>
+        
+            <label for="name"><b>NAME</b></label><br>
+            <input type="text" placeholder="Enter Name" name="name" required>
+        
+            <button type="submit" class="btn">Insert</button>
+            <!-- <button type="submit" class="btn cancel" onclick="closeInsertForm()">Close</button> -->
+            </form>
+        </div>
+    </div>
+    <div class="delete-form-wrapper">
+        <button class="button" onclick="openDeleteForm()">
+            Delete
+            <div class="button__horizontal"></div>
+            <div class="button__vertical"></div>
+        </button>
+        <div class="delete-form-popup" id="myDeleteForm">
+            <form action="/action_page.php" class="form-container">
+            <button type="submit" class="btn_cancel" onclick="closeDeleteForm()" >&#10006;</button> 
+            <h1 style="margin-top: -28px;" >Delete</h1>
+            <hr style="color:#e55743;">
+            <label for="id"><b>ID</b></label><br>
+            <input type="text" placeholder="Enter ID" name="id" required>
+        
+            <label for="name"><b>NAME</b></label><br>
+            <input type="text" placeholder="Enter Name" name="name" required>
+        
+            <button type="submit" class="btn">Delete</button>
+            <!-- <button type="submit" class="btn cancel" onclick="closeDeleteForm()">Close</button> -->
+            </form>
+        </div>
+    </div>
+    <div class="update-form-wrapper">
+        <button class="button" onclick="openUpdateForm()">
+            Update
+            <div class="button__horizontal"></div>
+            <div class="button__vertical"></div>
+        </button>
+        <div class="update-form-popup" id="myUpdateForm">
+            <form action="/action_page.php" class="form-container">
+            <button type="submit" class="btn_cancel" onclick="closeUpdateForm()" >&#10006;</button> 
+            <h1 style="margin-top: -28px;">Update</h1>
+            <hr style="color:#e55743;">
+            <label for="id"><b>ID</b></label><br>
+            <input type="text" placeholder="Enter ID" name="id" required>
+        
+            <label for="name"><b>NAME</b></label><br>
+            <input type="text" placeholder="Enter Name" name="name" required>
+        
+            <button type="submit" class="btn">Update</button>
+            <!-- <button type="submit" class="btn cancel" onclick="closeUpdateForm()">Close</button> -->
+            </form>
+        </div>
+    </div>
+    <div class="view-form-wrapper">
+        <button class="button" onclick="openViewForm()">
+            View
+            <div class="button__horizontal"></div>
+            <div class="button__vertical"></div>
+        </button>
+        <div class="view-form-popup move-horizontal" id="myViewForm">
+            <form action="/action_page.php" class="form-container">
+            <button type="submit" class="btn_cancel" onclick="closeViewForm()">&#10006;</button> 
+            <h1 style="margin-top: -28px;" >View</h1>
+            <hr style="color:#e55743;">
+            <label for="id"><b>ID</b></label><br>
+            <input type="text" placeholder="Enter ID" name="id" required>
+        
+            <label for="name"><b>NAME</b></label><br>
+            <input type="text" placeholder="Enter Name" name="name" required>
+        
+            <button type="submit" class="btn">View</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="menu.js"></script>
+</body>
+</html>
